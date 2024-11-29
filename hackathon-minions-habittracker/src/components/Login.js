@@ -28,7 +28,7 @@ const Login = () => {
 
       if (user && bcrypt.compareSync(formData.password, user.password)) {
         setMessage("Login successful!");
-        navigate("/home"); // Redirect to Home
+        navigate("/habit"); // Redirect to Home
       } else {
         setMessage("Invalid username or password.");
       }
