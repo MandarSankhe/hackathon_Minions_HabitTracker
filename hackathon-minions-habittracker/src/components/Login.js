@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import bcrypt from "bcryptjs";
+import "./Login.css"; // Import the CSS file
+import minionsImage from "../assets/minions.png"; // Importing local image
 
 const Login = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
+  const [registerData, setRegisterData] = useState({ username: "", password: "", userType: "Customer" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate(); // Hook to navigate to other pages
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleRegisterInputChange = (e) => {
+    const { name, value } = e.target;
+    setRegisterData({ ...registerData, [name]: value });
   };
 
   const handleLogin = () => {
@@ -32,7 +40,7 @@ const Login = () => {
   const handleRegister = () => {
     try {
       const usersData = JSON.parse(localStorage.getItem("users")) || [];
-      const userExists = usersData.some((user) => user.username === formData.username);
+      const userExists = usersData.some((user) => user.username === registerData.username);
 
       if (userExists) {
         setMessage("Username already exists. Please choose another.");
@@ -40,9 +48,9 @@ const Login = () => {
       }
 
       // Hash the password before saving
-      const hashedPassword = bcrypt.hashSync(formData.password, 10);
+      const hashedPassword = bcrypt.hashSync(registerData.password, 10);
 
-      usersData.push({ username: formData.username, password: hashedPassword });
+      usersData.push({ username: registerData.username, password: hashedPassword, userType: registerData.userType });
       localStorage.setItem("users", JSON.stringify(usersData));
       setMessage("Registration successful! You can now log in.");
     } catch (error) {
@@ -52,12 +60,17 @@ const Login = () => {
 
   return (
     <div className="container mt-5">
-      <div className="row">
+      <div className="text-center mb-4">
+        <img src={minionsImage} alt="Minions" className="minions-img" />
+      </div>
+      <div className="row justify-content-center">
         {/* Login Card */}
-        <div className="col-md-6">
-          <div className="card">
+        <div className="col-md-4">
+          <div className="card shadow-lg border-0">
+            <div className="card-header text-center bg-primary text-white">
+              <h3 className="card-title mb-0">Login</h3>
+            </div>
             <div className="card-body">
-              <h3 className="card-title">Login</h3>
               <input
                 type="text"
                 name="username"
@@ -74,7 +87,7 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleInputChange}
               />
-              <button className="btn btn-primary" onClick={handleLogin}>
+              <button className="btn btn-primary w-100" onClick={handleLogin}>
                 Login
               </button>
             </div>
@@ -82,27 +95,29 @@ const Login = () => {
         </div>
 
         {/* Register Card */}
-        <div className="col-md-6">
-          <div className="card">
+        <div className="col-md-4">
+          <div className="card shadow-lg border-0">
+            <div className="card-header text-center bg-primary text-white">
+              <h3 className="card-title mb-0">Register</h3>
+            </div>
             <div className="card-body">
-              <h3 className="card-title">Register</h3>
               <input
                 type="text"
                 name="username"
                 className="form-control my-2"
                 placeholder="Username"
-                value={formData.username}
-                onChange={handleInputChange}
+                value={registerData.username}
+                onChange={handleRegisterInputChange}
               />
               <input
                 type="password"
                 name="password"
                 className="form-control my-2"
                 placeholder="Password"
-                value={formData.password}
-                onChange={handleInputChange}
+                value={registerData.password}
+                onChange={handleRegisterInputChange}
               />
-              <button className="btn btn-success" onClick={handleRegister}>
+              <button className="btn btn-success w-100" onClick={handleRegister}>
                 Register
               </button>
             </div>

@@ -1,0 +1,36 @@
+:root {
+    --primary-bg: #ffe135a8;
+    --primary-color: #002060;
+    --secondary-color: #ffe599;
+  }
+  
+  body {
+    background-color: var(--primary-bg);
+    font-family: "Arial", sans-serif;
+  }
+  
+  .minions-img {
+    width: 251px;
+    height: auto;
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  .card-header {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    border-radius: 8px;
+  }
+  
+  h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  
