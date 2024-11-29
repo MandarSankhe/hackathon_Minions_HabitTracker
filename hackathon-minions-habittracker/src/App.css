@@ -36,3 +36,76 @@
     transform: rotate(360deg);
   }
 }
+
+.main-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.main-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* App.css */
+
+/* App.css */
+
+/* Main container structure */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr;  /* 30% width for left column, 70% for main content */
+  gap: 20px; /* Space between sections */
+  margin-top: 5em;
+  margin-left: 25em;
+}
+
+.main-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns for the charts */
+  gap: 20px; /* Space between charts */
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    grid-template-columns: 20% 80%; /* Keep the 30%-70% layout for larger screens */
+  }
+
+  .main-charts {
+    grid-template-columns: repeat(3, 1fr); /* Three charts side by side */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr; /* Full width layout for small screens */
+  }
+
+  .main-charts {
+    grid-template-columns: 1fr; /* Stack charts vertically on smaller screens */
+  }
+}
+
+.exercise-chart {
+  width: 30%;  /* Make the chart responsive to the container width */
+  height: 300px;  /* Set a fixed height for the chart */
+}
+
+/* Main container for all charts */
+.main-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three charts side by side */
+  width: 100%;
+  max-width: 500px; /* Optional: Limit the width of the entire chart section */
+  margin: 0 auto;  /* Center the chart section */
+}
+
+/* Individual chart container */
+.exercise-chart, .sleep-chart, .water-chart {
+  width: 100%;  /* Ensure the chart fills its container */
+  height: 300px;  /* Set a fixed height for all charts */
+  max-width: 400px; /* Limit the max width for better responsiveness */
+  margin: 0 auto;  /* Center each chart */
+}
+
+

@@ -1,0 +1,80 @@
+{
+  "userHabits": [
+    {
+      "userId": "user1",
+      "name": "John Doe",
+      "dailyHabits": [
+        {
+          "date": "2024-11-29",
+          "habits": [
+            { "name": "Exercise", "progress": "30 mins" },
+            { "name": "Sleep", "progress": "7 hours" },
+            { "name": "Early Dinner", "progress": "Before 8:30" },
+            { "name": "Water Intake", "progress": "2 Liters" },
+            { "name": "Tech-Free Hours", "progress": "Yes" }
+          ]
+        },
+        {
+          "date": "2024-11-28",
+          "habits": [
+            { "name": "Exercise", "progress": "More than 30 mins" },
+            { "name": "Sleep", "progress": "8 hours" },
+            { "name": "Early Dinner", "progress": "Before 8:30" },
+            { "name": "Water Intake", "progress": "3 Liters" },
+            { "name": "Tech-Free Hours", "progress": "No" }
+          ]
+        },
+        {
+          "date": "2024-11-27",
+          "habits": [
+            { "name": "Exercise", "progress": "15 mins" },
+            { "name": "Sleep", "progress": "6 hours" },
+            { "name": "Early Dinner", "progress": "After 8:30" },
+            { "name": "Water Intake", "progress": "1 Liter" },
+            { "name": "Tech-Free Hours", "progress": "Yes" }
+          ]
+        },
+        {
+          "date": "2024-11-26",
+          "habits": [
+            { "name": "Exercise", "progress": "30 mins" },
+            { "name": "Sleep", "progress": "7 hours" },
+            { "name": "Early Dinner", "progress": "Before 8:30" },
+            { "name": "Water Intake", "progress": "2 Liters" },
+            { "name": "Tech-Free Hours", "progress": "No" }
+          ]
+        },
+        {
+          "date": "2024-11-25",
+          "habits": [
+            { "name": "Exercise", "progress": "More than 30 mins" },
+            { "name": "Sleep", "progress": "6 hours" },
+            { "name": "Early Dinner", "progress": "Before 8:30" },
+            { "name": "Water Intake", "progress": "3 Liters" },
+            { "name": "Tech-Free Hours", "progress": "Yes" }
+          ]
+        },
+        {
+          "date": "2024-11-24",
+          "habits": [
+            { "name": "Exercise", "progress": "30 mins" },
+            { "name": "Sleep", "progress": "7 hours" },
+            { "name": "Early Dinner", "progress": "Before 8:30" },
+            { "name": "Water Intake", "progress": "2 Liters" },
+            { "name": "Tech-Free Hours", "progress": "Yes" }
+          ]
+        },
+        {
+          "date": "2024-11-23",
+          "habits": [
+            { "name": "Exercise", "progress": "More than 30 mins" },
+            { "name": "Sleep", "progress": "8 hours" },
+            { "name": "Early Dinner", "progress": "Before 8:30" },
+            { "name": "Water Intake", "progress": "3 Liters" },
+            { "name": "Tech-Free Hours", "progress": "No" }
+          ]
+        }
+      ]
+    }
+  ]
+}
